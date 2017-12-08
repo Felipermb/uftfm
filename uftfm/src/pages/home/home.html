@@ -1,0 +1,53 @@
+
+<ion-content style="background-image: url(assets/img/escolhido.png); background-repeat:no-repeat;">
+  <img class="button-personalizadoPrograma" src="{{imgPrograma}}" (tap)="tapEvent($event)">
+  <div class="programa">
+    {{nomePrograma}}
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <div>
+          <button class="button-personalizado-min" clear ion-button (click)="exibirInformacao()">
+            <img src="{{ imgInfo }}">
+          </button>
+          <button class="button-personalizado grow" clear ion-button (click)="alterarEstado()">
+            <img src="{{ imgAcao }}">
+          </button>
+          <button class="button-personalizado-min" clear ion-button (click)="exibirProgramacao()">
+            <img src="{{ imgCalendar }}">
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-footer style="height: auto" no-border>
+    <ion-fab right bottom>
+      <button ion-fab color="light">
+        <ion-icon name="arrow-dropleft"></ion-icon>
+      </button>
+      <ion-fab-list side="left">
+        <a href="https://www.facebook.com/uftfm/">
+          <button ion-fab>
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+        </a>
+        <a href="https://twitter.com/uftoficial">
+          <button ion-fab>
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+        </a>
+        <a href="https://www.instagram.com/uftfm/">
+          <button ion-fab>
+            <ion-icon name="logo-instagram"></ion-icon>
+          </button>
+        </a>
+        <a href="https://www.youtube.com/UFToficial">
+          <button ion-fab>
+            <ion-icon name="logo-youtube"></ion-icon>
+          </button>
+        </a>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-footer>
+</ion-content>

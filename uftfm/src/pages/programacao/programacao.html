@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Programação</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #76b9ad ">
+  <p *ngIf="!items">Teste</p>
+  <ion-card class="imagemCard" *ngFor="let item of items">
+    <img src="{{item.imagem}}">
+    <ion-item>
+      <h1>{{item.title}}</h1>
+      <p>{{item.quando}}</p>
+    </ion-item>
+    <div class="textoDescricao">
+      {{ item.descricao }}
+    </div>
+  </ion-card>
+</ion-content>
