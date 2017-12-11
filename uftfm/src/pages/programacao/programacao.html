@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding style="background-color: #76b9ad ">
-  <p *ngIf="!items">Teste</p>
+  <h2 *ngIf="!items" style="color: white">Carregando a programação,se tiver sem internet do celular, não dá :|</h2>
   <ion-card class="imagemCard" *ngFor="let item of items">
     <img src="{{item.imagem}}">
     <ion-item>
