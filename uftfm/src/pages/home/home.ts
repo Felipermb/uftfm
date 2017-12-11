@@ -48,7 +48,7 @@ export class HomePage {
 
 
     //Inscrever os métodos que estarão ouvindo as alterações
-    this.ouvinteDeAlteracoes();
+    this.ouvinteDeAlteracoes();  
   }
 
   //URL de conexão com a rádio
