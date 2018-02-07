@@ -9,6 +9,9 @@ import { SobreRadioPage } from '../sobre-radio/sobre-radio'
 //Importação dos Componentes de Exibição do Player no Espaço de Notificações
 import { MusicControls } from '@ionic-native/music-controls';
 
+//Importação dos componentes para recuperação de arquivo google Drive
+import { Http } from '@angular/http';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -41,14 +44,16 @@ export class HomePage {
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,  
-    public musicControls: MusicControls) {
+    public musicControls: MusicControls,
+    public http: Http) {
 
     //Imagens e Label...
     this.instanciarVariaveis();
 
-
     //Inscrever os métodos que estarão ouvindo as alterações
-    this.ouvinteDeAlteracoes();  
+    // this.ouvinteDeAlteracoes();
+    this.play();
+    this.pegarArquivoDeLog();
   }
 
   //URL de conexão com a rádio
@@ -62,6 +67,13 @@ export class HomePage {
     this.imgPrograma = "assets/img/logo.jpg"
     this.nomePrograma = "UFTFM 96,9";
     this.tap = 0;
+  }
+
+  pegarArquivoDeLog(){
+    var url = "https://drive.google.com/file/d/1sCDtUBd9mLveEqy4LEOgS-MmetB4uZ6y";
+    this.http.get(url).subscribe(data => {
+      console.log(data);
+    });
   }
 
   //Abrir Informações da Radio
@@ -251,7 +263,6 @@ export class HomePage {
       ticker: 'Now playing "Time is Running Out"'
     });
   }
-
 }
 
 
