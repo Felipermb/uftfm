@@ -29,6 +29,8 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
+my-release-key.keystore
+UFTFM.apk
 
 .DS_Store
 Thumbs.db
