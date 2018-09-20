@@ -53,7 +53,6 @@ export class HomePage {
     //Inscrever os métodos que estarão ouvindo as alterações
     // this.ouvinteDeAlteracoes();
     this.play();
-    this.pegarArquivoDeLog();
   }
 
   //URL de conexão com a rádio
@@ -67,13 +66,6 @@ export class HomePage {
     this.imgPrograma = "assets/img/logo.jpg"
     this.nomePrograma = "UFTFM 96,9";
     this.tap = 0;
-  }
-
-  pegarArquivoDeLog(){
-    var url = "https://drive.google.com/file/d/1sCDtUBd9mLveEqy4LEOgS-MmetB4uZ6y";
-    this.http.get(url).subscribe(data => {
-      console.log(data);
-    });
   }
 
   //Abrir Informações da Radio
@@ -94,7 +86,7 @@ export class HomePage {
   //Depois de 10 toques, abrir info sobre a fabrica
   tapEvent(e) {
     this.tap++
-    if (this.tap == 10) {
+    if (this.tap == 3) {
       this.abrirModal(SobreFabricaPage)
       this.tap = 0;
     }
